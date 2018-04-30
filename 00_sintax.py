@@ -27,7 +27,7 @@ FOR STATEMENT
 """
 # A "for" statement works like this:
 for k in range(0,10):
-    # do stuff
+    # do something
     print(k)
 
 mystring = '\nI can print the single characters of a string'
@@ -45,17 +45,15 @@ print(mylist)
 for k in mylist:
     print(k)
 # I can take only its first two elements
-print(mylist[::2])
+print(mylist[:2])
 # Or the two last ones
 print(mylist[-2:])
+# Or one every three elements
+print(mylist[::3])
 
 """
 FUNCTIONS
 """
-def my_first_function():
-    print('This function just prints this line.')
-my_first_function()
-
 # This function returns a value
 def compute_double(input_number):
     twice_the_input = 2*input_number
@@ -70,14 +68,17 @@ def some_operations(input_number = 13):
     twice = compute_double(input_number)
     third_power = input_number**3
     minus_one = input_number - 1
-    py2_division_by_three = input_number / 3
-    py2_rational_division_by_three = input_number / 3.0
+    division_by_three = input_number / 3
+    another_division_by_three = input_number / 3.0
     integer_division_by_three = input_number // 3
     return twice, third_power, minus_one, \
-           py2_division_by_three, py2_rational_division_by_three, \
+           division_by_three, another_division_by_three, \
            integer_division_by_three
 
 tuple_with_the_output = some_operations(mynumber)
 print(tuple_with_the_output)
 print('The default output is')
 print(some_operations())
+myinput = 42
+print('The output for input=%02d is' % myinput)
+print(some_operations(myinput))
